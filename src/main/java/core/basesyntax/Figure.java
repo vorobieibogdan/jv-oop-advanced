@@ -1,7 +1,6 @@
-package core.basesyntax;
+package core.bogdan.figures;
 
-public abstract class Figure {
-    public abstract double getArea();
-
-    public abstract void pritnInfo();
+public interface Figure {
+    double getArea();
+    void draw();
 }
