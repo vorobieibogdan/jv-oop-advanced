@@ -1,6 +1,6 @@
 package core.bogdan.figures;
 
-public interface Figure {
+public abstract class Figure {
     private String color;
 
     public Figure(String color) {
