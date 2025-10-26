@@ -3,7 +3,7 @@ package core.basesyntax;
 public class Circle extends Figure {
     private int radius;
 
-    public Circle(int radius, String color) {
+    public Circle(int radius, Color color) {
         super(color);
         this.radius = radius;
     }
@@ -14,10 +14,10 @@ public class Circle extends Figure {
     }
 
     @Override
-    public void printInfo() {
-        System.out.println("Figure: circle, area: " + getArea()
-                + " sq. units, radius: " + radius
-                + " units, color: " + getColor());
+    public void draw() {
+        System.out.println("Figure: circle, area: "
+                + getArea() + " sq. units, radius: "
+                + radius + " units, color: " + getColor());
     }
 }
 
