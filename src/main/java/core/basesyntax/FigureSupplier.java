@@ -3,38 +3,39 @@ package core.basesyntax;
 import java.util.Random;
 
 public class FigureSupplier {
-    private static final int FIGURE_COUNT = 5;
-    private static final int MAX_VALUE = 50;
-
-    private final Random random = new Random();
-    private final ColorSupplier colorSupplier = new ColorSupplier();
+    private static final int MAX_SIZE = 10;
+    private static final Random random = new Random();
 
     public Figure getRandomFigure() {
-        int type = random.nextInt(FIGURE_COUNT);
-        String color = colorSupplier.getRandomColor();
+        int figureType = random.nextInt(5);
+        Color randomColor = getRandomColor();
 
-        switch (type) {
+        switch (figureType) {
             case 0:
-                return new Square(random.nextInt(MAX_VALUE) + 1, color);
+                return new Circle(getRandomNumber(), randomColor);
             case 1:
-                return new Rectangle(random.nextInt(MAX_VALUE) + 1,
-                        random.nextInt(MAX_VALUE) + 1, color);
+                return new Square(getRandomNumber(), randomColor);
             case 2:
-                return new RightTriangle(random.nextInt(MAX_VALUE) + 1,
-                        random.nextInt(MAX_VALUE) + 1, color);
+                return new Rectangle(getRandomNumber(), getRandomNumber(), randomColor);
             case 3:
-                return new Circle(random.nextInt(MAX_VALUE) + 1, color);
+                return new RightTriangle(getRandomNumber(), getRandomNumber(), randomColor);
             default:
                 return new IsoscelesTrapezoid(
-                        random.nextInt(MAX_VALUE) + 1,
-                        random.nextInt(MAX_VALUE) + 1,
-                        random.nextInt(MAX_VALUE) + 1,
-                        color);
+                        getRandomNumber(), getRandomNumber(), getRandomNumber(), randomColor
+                );
         }
     }
 
     public Figure getDefaultFigure() {
-        return new Circle(10, "white");
+        return new Circle(10, Color.BLACK); // або BLACK, залежно від завдання
+    }
+
+    private int getRandomNumber() {
+        return random.nextInt(MAX_SIZE) + 1;
+    }
+
+    private Color getRandomColor() {
+        Color[] colors = Color.values();
+        return colors[random.nextInt(colors.length)];
     }
 }
-
