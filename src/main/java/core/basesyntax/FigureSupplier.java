@@ -39,3 +39,4 @@ public class FigureSupplier {
         return colors[random.nextInt(colors.length)];
     }
 }
+
