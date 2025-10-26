@@ -28,7 +28,8 @@ public class FigureSupplier {
                 return new IsoscelesTrapezoid(
                         random.nextInt(MAX_VALUE) + 1,
                         random.nextInt(MAX_VALUE) + 1,
-                        random.nextInt(MAX_VALUE) + 1, color);
+                        random.nextInt(MAX_VALUE) + 1,
+                        color);
         }
     }
 
@@ -36,3 +37,4 @@ public class FigureSupplier {
         return new Circle(10, "white");
     }
 }
+

@@ -1,4 +1,4 @@
-package core.bogdan.figures;
+package core.basesyntax;
 
 public abstract class Figure {
     private String color;
@@ -15,3 +15,4 @@ public abstract class Figure {
 
     public abstract void printInfo();
 }
+
