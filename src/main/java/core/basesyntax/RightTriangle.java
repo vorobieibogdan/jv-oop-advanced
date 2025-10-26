@@ -4,10 +4,10 @@ public class RightTriangle extends Figure {
     private int firstLeg;
     private int secondLeg;
 
-    public RightTriangle(int legA, int legB, String color) {
+    public RightTriangle(int firstLeg, int secondLeg, Color color) {
         super(color);
-        this.firstLeg = legA;
-        this.secondLeg = legB;
+        this.firstLeg = firstLeg;
+        this.secondLeg = secondLeg;
     }
 
     @Override
@@ -16,11 +16,10 @@ public class RightTriangle extends Figure {
     }
 
     @Override
-    public void printInfo() {
-        System.out.println("Figure: right triangle, area: " + getArea()
-                + " sq. units, firstLeg: " + firstLeg
-                + ", secondLeg: " + secondLeg
-                + ", color: " + getColor());
+    public void draw() {
+        System.out.println("Figure: right triangle, area: "
+                + getArea() + " sq. units, first leg: " + firstLeg
+                + " units, second leg: " + secondLeg
+                + " units, color: " + getColor());
     }
 }
-

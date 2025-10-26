@@ -13,4 +13,3 @@ public abstract class Figure implements Drawable {
         return color;
     }
 }
-
